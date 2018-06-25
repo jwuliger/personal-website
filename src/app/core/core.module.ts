@@ -13,7 +13,9 @@ export class CoreModule {
 		parentModule: CoreModule
 	) {
 		if (parentModule) {
-			throw new Error('CoreModule is already loaded. Import it in the AppModule only!');
+			throw new Error(
+				'CoreModule is already loaded. Import it in the AppModule only!'
+			);
 		}
 	}
 }

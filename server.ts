@@ -1,3 +1,4 @@
+// tslint:disable:max-line-length
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
@@ -17,14 +18,19 @@ const PORT = process.env.PORT || '0432';
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
+const {
+	AppServerModuleNgFactory,
+	LAZY_MODULE_MAP
+} = require('./dist/server/main');
 
 // Angular Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine(
 	'html',
 	ngExpressEngine({
 		bootstrap: AppServerModuleNgFactory,
-		providers: [ provideModuleMap(LAZY_MODULE_MAP) ]
+		providers: [
+			provideModuleMap(LAZY_MODULE_MAP)
+		]
 	})
 );
 
@@ -49,5 +55,7 @@ app.get('*', (req, res) => {
 
 // Start up the Node server
 app.listen(PORT, () => {
-	console.log(`JMW Website - Node Express Server is now ready on http://localhost:${PORT}`);
+	console.log(
+		`JMW Website - Node Express Server is now ready on http://localhost:${PORT}`
+	);
 });

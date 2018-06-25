@@ -14,8 +14,12 @@ import { ROUTES } from './static.paths';
 enableProdMode();
 
 // Import module map for lazy loading
-// * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/server/main');
+// * NOTE :: leave this as require()
+// 		since this file is built Dynamically from webpack
+const {
+	AppServerModuleNgFactory,
+	LAZY_MODULE_MAP
+} = require('./dist/server/main');
 
 const BROWSER_FOLDER = join(process.cwd(), 'browser');
 
@@ -39,7 +43,9 @@ ROUTES.forEach((route) => {
 			renderModuleFactory(AppServerModuleNgFactory, {
 				document: index,
 				url: route,
-				extraProviders: [ provideModuleMap(LAZY_MODULE_MAP) ]
+				extraProviders: [
+					provideModuleMap(LAZY_MODULE_MAP)
+				]
 			})
 		)
 		.then((html) => writeFileSync(join(fullPath, 'index.html'), html));
