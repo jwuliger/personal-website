@@ -13,10 +13,10 @@ module.exports = {
 		prerender: './prerender.ts'
 	},
 	target: 'node',
-	resolve: { extensions: ['.ts', '.js'] },
+	resolve: { extensions: [ '.ts', '.js' ] },
 
 	// Make sure we include all node_modules etc
-	externals: [/node_modules/],
+	externals: [ /node_modules/ ],
 	output: {
 		// Puts the output at the root of the dist folder
 		path: path.join(__dirname, 'dist'),
@@ -30,7 +30,7 @@ module.exports = {
 				// Removing this will cause deprecation warnings to appear.
 				test: /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
 				parser: { system: true }
-			},
+			}
 		]
 	},
 	plugins: [
@@ -47,4 +47,4 @@ module.exports = {
 			{}
 		)
 	]
-}
+};

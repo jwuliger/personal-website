@@ -1,3 +1,1 @@
-export const ROUTES = [
-	'/'
-];
+export const ROUTES = [ '/' ];

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatToolbarModule } from '@angular/material';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { TransferHttpCacheModule } from '@nguniversal/common';
@@ -14,14 +14,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 
-@NgModule( {
-	declarations: [
-		AppComponent
-	],
+@NgModule({
+	declarations: [ AppComponent ],
 	imports: [
-		BrowserModule.withServerTransition( { appId: 'jmwServerApp' } ),
+		BrowserModule.withServerTransition({ appId: 'jmwServerApp' }),
 
-		AngularFireModule.initializeApp( environment.firebase, 'jmwFirebaseApp' ),
+		AngularFireModule.initializeApp(environment.firebase, 'jmwFirebaseApp'),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
 
@@ -31,12 +29,9 @@ import { CoreModule } from './core/core.module';
 		BrowserAnimationsModule,
 		CoreModule,
 		MatToolbarModule,
-		ServiceWorkerModule.register(
-			'ngsw-worker.js',
-			{ enabled: environment.production }
-		)
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 	],
 	providers: [],
 	bootstrap: [ AppComponent ]
-} )
-export class AppModule { }
+})
+export class AppModule {}

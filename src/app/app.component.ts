@@ -2,20 +2,15 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { Observable } from 'rxjs';
 
-@Component( {
+@Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
 	styleUrls: [ './app.component.scss' ]
-} )
+})
 export class AppComponent {
-	title = 'jmw-site';
-
 	contacts$: Observable<any[]>;
 
-	constructor(
-		private afs: AngularFirestore
-	) {
-		this.contacts$ = this.afs.collection( 'contacts' ).valueChanges();
+	constructor(private afs: AngularFirestore) {
+		this.contacts$ = this.afs.collection('contacts').valueChanges();
 	}
-
 }
