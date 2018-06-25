@@ -14,7 +14,7 @@ enableProdMode();
 // Express server
 const app = express();
 
-const PORT = process.env.PORT || '0432';
+const PORT = process.env.PORT || 1551;
 const DIST_FOLDER = join(process.cwd(), 'dist');
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack

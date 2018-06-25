@@ -1,0 +1,14 @@
+* {
+	&:active,
+	:focus {
+		outline: none !important; // Remove the blue outline on links, and buttons when they are active; or the focus is set on them.
+	}
+}
+
+label {
+	margin-bottom: 0; // Remove the margin-bottom from the <label> HTML element.
+}
+
+a:not(.mat-button):not(.mat-raised-button):not(.mat-fab):not(.mat-mini-fab):not([mat-list-item]) {
+	color: #3f51b5; // Use our primary color for all links that are not Angular Material elements. Those have one of the following classes: .mat-button, mat-raised-button, mat-fab-button, mat-list-item, etc.
+}

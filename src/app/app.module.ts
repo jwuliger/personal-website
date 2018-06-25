@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-import { MatToolbarModule } from '@angular/material';
+import {
+    MatDividerModule,
+    MatListModule,
+    MatToolbarModule,
+} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +34,11 @@ import { CoreModule } from './core/core.module';
 		BrowserTransferStateModule,
 		BrowserAnimationsModule,
 		CoreModule,
+
 		MatToolbarModule,
+		MatListModule,
+		MatDividerModule,
+
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production
 		})

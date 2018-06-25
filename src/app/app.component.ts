@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 	]
 })
 export class AppComponent {
-	contacts$: Observable<any[]>;
+	public contacts$: Observable<any[]>;
 
-	constructor(private afs: AngularFirestore) {
+	constructor(public afs: AngularFirestore) {
 		this.contacts$ = this.afs.collection('contacts').valueChanges();
 	}
 }
