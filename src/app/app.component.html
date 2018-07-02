@@ -1,18 +1,24 @@
-<mat-toolbar class="mat-elevation-z8" color="primary">Jared Wuliger</mat-toolbar>
+<mat-toolbar class="mat-elevation-z8" color="primary">Personal Web App (WIP)</mat-toolbar>
 
 <div class="view-wrapper">
-	<mat-list *ngIf="contacts$">
-		<h2 mat-subheading-2>Testing Firestore Connection</h2>
-		<mat-list-item *ngFor="let contact of contacts$ | async">
-			<img mat-list-avatar
-				src="https://placeimg.com/640/480/any"
-				alt="Image of {{ contact.name }}">
-			<h4 mat-line>{{ contact.name }}</h4>
-			<p mat-line> {{ contact.status }} </p>
-			<mat-divider inset
-						*ngIf="!last"></mat-divider>
-		</mat-list-item>
-	</mat-list>
+
+	<mat-card>
+		<mat-card-header>
+			<h2 mat-subheading-2>SSR With Dynamic Firebase Firestore Data</h2>
+		</mat-card-header>
+		<mat-card-content>
+			<mat-list>
+				<mat-list-item *ngFor="let contact of contacts">
+					<img mat-list-avatar
+						src="https://placeimg.com/640/480/any"
+						alt="Image of {{ contact.name }}">
+					<h3 mat-line>{{ contact.name }}</h3>
+					<p mat-line> {{ contact.status }} </p>
+					<mat-divider inset *ngIf="!last"></mat-divider>
+				</mat-list-item>
+			</mat-list>
+		</mat-card-content>
+	</mat-card>
 
 	<router-outlet></router-outlet>
 </div>

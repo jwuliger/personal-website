@@ -36,7 +36,7 @@
 				"build": {
 					"builder": "@angular-devkit/build-angular:browser",
 					"options": {
-						"outputPath": "dist/browser",
+						"outputPath": "dist/jmw-site",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": "src/polyfills.ts",
@@ -47,7 +47,7 @@
 							"src/manifest.json"
 						],
 						"styles": [
-							"src/styles.scss"
+							"src/main.scss"
 						],
 						"scripts": []
 					},
@@ -65,7 +65,7 @@
 							"extractCss": true,
 							"namedChunks": false,
 							"aot": true,
-							"extractLicenses": true,
+							"extractLicenses": false,
 							"vendorChunk": false,
 							"buildOptimizer": true,
 							"serviceWorker": true
@@ -104,19 +104,9 @@
 				"server": {
 					"builder": "@angular-devkit/build-angular:server",
 					"options": {
-						"outputPath": "dist/server",
+						"outputPath": "dist/jmw-site-server",
 						"main": "src/main.server.ts",
 						"tsConfig": "src/tsconfig.server.json"
-					},
-					"configurations": {
-						"production": {
-							"fileReplacements": [
-								{
-									"replace": "src/environments/environment.ts",
-									"with": "src/environments/environment.prod.ts"
-								}
-							]
-						}
 					}
 				}
 			}

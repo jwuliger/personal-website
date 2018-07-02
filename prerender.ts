@@ -1,3 +1,4 @@
+// Load zone.js for the server.
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
@@ -9,22 +10,21 @@ import { join } from 'path';
 
 import { ROUTES } from './static.paths';
 
-// Load zone.js for the server.
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
 // Import module map for lazy loading
-// * NOTE :: leave this as require()
-// 		since this file is built Dynamically from webpack
+// tslint:disable-next-line:max-line-length
+// * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const {
 	AppServerModuleNgFactory,
 	LAZY_MODULE_MAP
-} = require('./dist/server/main');
+} = require('./dist/jmw-site-server/main');
 
-const BROWSER_FOLDER = join(process.cwd(), 'browser');
+const BROWSER_FOLDER = join(process.cwd(), 'jmw-site');
 
 // Load the index.html file containing referances to your application bundle.
-const index = readFileSync(join('browser', 'index.html'), 'utf8');
+const index = readFileSync(join('dist/jmw-site', './index.html'), 'utf8');
 
 let previousRender = Promise.resolve();
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
+    MatCardModule,
     MatDividerModule,
     MatListModule,
     MatToolbarModule,
@@ -8,7 +9,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -16,25 +16,21 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 
 @NgModule({
-	declarations: [
-		AppComponent
-	],
+	declarations: [AppComponent],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'jmwServerApp' }),
+		BrowserTransferStateModule,
 
 		AngularFireModule.initializeApp(environment.firebase, 'jmwFirebaseApp'),
 		AngularFirestoreModule,
 		AngularFireAuthModule,
 
 		AppRoutingModule,
-		TransferHttpCacheModule,
-		BrowserTransferStateModule,
 		BrowserAnimationsModule,
-		CoreModule,
 
+		MatCardModule,
 		MatToolbarModule,
 		MatListModule,
 		MatDividerModule,
@@ -44,8 +40,6 @@ import { CoreModule } from './core/core.module';
 		})
 	],
 	providers: [],
-	bootstrap: [
-		AppComponent
-	]
+	bootstrap: [AppComponent]
 })
 export class AppModule {}
