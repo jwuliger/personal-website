@@ -10,10 +10,10 @@
 		"build:pwa": "ng build --prod",
 		"serve:pwa": "cd dist/jmw-site && http-server -o -p 6584",
 
-		"build:all": "ng build --prod && ng run jmw-site:server && npm run webpack:prerender && npm run prerender",
-		"serve:prerender": "http-server dist/jmw-site -c-1",
 		"webpack:prerender": "webpack --config webpack.prerender.config.js",
-		"prerender": "node dist/jmw-site/prerender.js"
+		"build:prerender": "node dist/jmw-site/prerender.js",
+		"serve:prerender": "http-server dist/jmw-site -o -p 8233",
+		"build:all": "ng build --prod && ng run jmw-site:server && npm run webpack:prerender && npm run build:prerender"
 	},
 	"private": true,
 	"dependencies": {
@@ -45,9 +45,9 @@
 		"@angular/compiler-cli": "^6.0.7",
 		"@angular/language-service": "^6.0.7",
 		"@firebase/app-types": "^0.3.2",
-		"@types/node": "~10.5.1",
+		"@types/node": "~10.5.2",
 		"codelyzer": "^4.4.2",
-		"firebase-tools": "^3.19.2",
+		"firebase-tools": "^3.19.3",
 		"fs-extra": "^6.0.1",
 		"express": "^4.16.3",
 		"http-server": "^0.11.1",

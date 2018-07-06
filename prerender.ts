@@ -1,52 +1,56 @@
-// Load zone.js for the server.
 import 'reflect-metadata';
 import 'zone.js/dist/zone-node';
 
 import { enableProdMode } from '@angular/core';
 import { renderModuleFactory } from '@angular/platform-server';
 import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { join } from 'path';
+import * as fs from 'fs-extra';
+import { join, resolve } from 'path';
 
-import { ROUTES } from './static.paths';
-
-// Faster server renders w/ Prod mode (dev mode never needed)
-enableProdMode();
+// Load zone.js for the server.
+(global as any).WebSocket = require('ws');
+(global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 // Import module map for lazy loading
-// tslint:disable-next-line:max-line-length
-// * NOTE :: leave this as require() since this file is built Dynamically from webpack
+// Add routes manually that you need rendered
+const ROUTES = [
+	'/'
+];
+
+const APP_NAME = 'jmw-site';
+
+// leave this as require(), imported via webpack
 const {
 	AppServerModuleNgFactory,
 	LAZY_MODULE_MAP
-} = require('./dist/jmw-site-server/main');
+} = require(`./dist/${APP_NAME}-server/main`);
 
-const BROWSER_FOLDER = join(process.cwd(), 'jmw-site');
+enableProdMode();
 
-// Load the index.html file containing referances to your application bundle.
-const index = readFileSync(join('dist/jmw-site', './index.html'), 'utf8');
+async function prerender() {
+	// Get the app index
+	const browserBuild = `dist/${APP_NAME}`;
+	const index = await fs.readFile(join(browserBuild, 'index.html'), 'utf8');
 
-let previousRender = Promise.resolve();
+	// Loop over each route
+	for (const route of ROUTES) {
+		const pageDir = join(browserBuild, route);
+		await fs.ensureDir(pageDir);
 
-// Iterate each route path
-ROUTES.forEach((route) => {
-	const fullPath = join(BROWSER_FOLDER, route);
+		// Render with Universal
+		const html = await renderModuleFactory(AppServerModuleNgFactory, {
+			document: index,
+			url: route,
+			extraProviders: [
+				provideModuleMap(LAZY_MODULE_MAP)
+			]
+		});
 
-	// Make sure the directory structure is there
-	if (!existsSync(fullPath)) {
-		mkdirSync(fullPath);
+		await fs.writeFile(join(pageDir, 'index.html'), html);
 	}
 
-	// Writes rendered HTML to index.html, replacing the file if it already exists.
-	previousRender = previousRender
-		.then((_) =>
-			renderModuleFactory(AppServerModuleNgFactory, {
-				document: index,
-				url: route,
-				extraProviders: [
-					provideModuleMap(LAZY_MODULE_MAP)
-				]
-			})
-		)
-		.then((html) => writeFileSync(join(fullPath, 'index.html'), html));
-});
+	console.log('done rendering :)');
+	process.exit();
+}
+
+prerender();
