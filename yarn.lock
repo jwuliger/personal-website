@@ -9,6 +9,13 @@
     "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
     rxjs "^6.0.0"
 
+"@angular-devkit/architect@github:angular/angular-devkit-architect-builds#df409e6":
+  version "0.7.0-beta.1"
+  resolved "https://codeload.github.com/angular/angular-devkit-architect-builds/tar.gz/7c32980e6ed76f8a854e498145edea0330e0efbb"
+  dependencies:
+    "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
+    rxjs "^6.0.0"
+
 "@angular-devkit/build-angular@angular/angular-devkit-build-angular-builds":
   version "0.7.0-beta.1"
   resolved "https://codeload.github.com/angular/angular-devkit-build-angular-builds/tar.gz/a83d90670a97c212ac06c11ee8dfec347dd616b1"
@@ -88,9 +95,25 @@
     rxjs "^6.0.0"
     source-map "^0.5.6"
 
+"@angular-devkit/core@github:angular/angular-devkit-core-builds#df409e6":
+  version "0.7.0-beta.1"
+  resolved "https://codeload.github.com/angular/angular-devkit-core-builds/tar.gz/006242997a9668eb036dde1e0b9297118d9836b7"
+  dependencies:
+    ajv "~6.4.0"
+    chokidar "^2.0.3"
+    rxjs "^6.0.0"
+    source-map "^0.5.6"
+
 "@angular-devkit/schematics@github:angular/angular-devkit-schematics-builds#3e3dffb":
   version "0.7.0-beta.1"
   resolved "https://codeload.github.com/angular/angular-devkit-schematics-builds/tar.gz/b8e73e533d7e77ed42d86f0e6b54271e0190465a"
+  dependencies:
+    "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
+    rxjs "^6.0.0"
+
+"@angular-devkit/schematics@github:angular/angular-devkit-schematics-builds#df409e6":
+  version "0.7.0-beta.1"
+  resolved "https://codeload.github.com/angular/angular-devkit-schematics-builds/tar.gz/9d93e189289284193ace98bcd75820089107e213"
   dependencies:
     "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
     rxjs "^6.0.0"
@@ -406,6 +429,10 @@
     tree-kill "^1.0.0"
     webpack-sources "^1.1.0"
 
+"@nguniversal/express-engine@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@nguniversal/express-engine/-/express-engine-6.0.0.tgz#f8bc7b5e940afb1ffdbdcb1bb22665d440ea0b0b"
+
 "@nguniversal/module-map-ngfactory-loader@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@nguniversal/module-map-ngfactory-loader/-/module-map-ngfactory-loader-6.0.0.tgz#0dd26c3f1c26d17bb21b8dfc0da53d82b7f11028"
@@ -418,9 +445,17 @@
     "@angular-devkit/schematics" "github:angular/angular-devkit-schematics-builds#df409e6"
     typescript ">=2.6.2 <2.8"
 
-"@schematics/update@github:angular/schematics-update-builds#3e3dffb":
+"@schematics/angular@github:angular/schematics-angular-builds#df409e6":
   version "0.7.0-beta.1"
-  resolved "https://codeload.github.com/angular/schematics-update-builds/tar.gz/57884ee0f875e7c7ce3d082c4e96cc8b5984af55"
+  resolved "https://codeload.github.com/angular/schematics-angular-builds/tar.gz/0fc3742de08a7a9784a81724bf64b4f08c2081b3"
+  dependencies:
+    "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
+    "@angular-devkit/schematics" "github:angular/angular-devkit-schematics-builds#df409e6"
+    typescript ">=2.6.2 <2.8"
+
+"@schematics/update@github:angular/schematics-update-builds#df409e6":
+  version "0.7.0-beta.1"
+  resolved "https://codeload.github.com/angular/schematics-update-builds/tar.gz/2bab80fe1849e308c66d0b4d4a468a89a83bd6de"
   dependencies:
     "@angular-devkit/core" "github:angular/angular-devkit-core-builds#df409e6"
     "@angular-devkit/schematics" "github:angular/angular-devkit-schematics-builds#df409e6"

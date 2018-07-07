@@ -1,12 +1,8 @@
-import {
-	InjectionToken,
-	NgModule,
-	Optional
-} from '@angular/core';
-import {
-	firebase
-} from '@firebase/app';
 import 'firebase/app';
+
+import { InjectionToken, NgModule, Optional } from '@angular/core';
+import { firebase } from '@firebase/app';
+
 export var FirebaseOptionsToken = new InjectionToken( 'angularfire2.app.options' );
 export var FirebaseNameOrConfigToken = new InjectionToken( 'angularfire2.app.nameOrConfig' );
 var FirebaseApp = ( function () {

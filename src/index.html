@@ -2,33 +2,104 @@
 <html lang="en">
 
 	<head>
-		<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-		      rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
-		      rel="stylesheet"> -->
 		<meta charset="utf-8">
-		<title>Jared Wuliger</title>
+		<title>Jared Wuliger | Software Architect & Mentor</title>
 		<base href="/">
 
-		<meta name="viewport"
-		      content="width=device-width, initial-scale=1">
-		<link rel="icon"
-		      type="image/x-icon"
-		      href="favicon.ico">
-		<link rel="manifest"
-		      href="manifest.json">
-		<meta name="theme-color"
-		      content="#1976d2">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="manifest" href="manifest.json">
+		<meta name="theme-color" content="#1976d2">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+		      rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300"
+		      rel="stylesheet">
 	</head>
 
 	<body>
-		<app-root>
-			HELLO!
-		</app-root>
-		<noscript>Please enable JavaScript to continue using this application.</noscript>
+
 		<style>
-			@import "https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+			.loader {
+				width: 50px;
+				height: 50px;
+				margin: auto;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+			.loader:before {
+				content: '';
+				width: 50px;
+				height: 5px;
+				background: #000;
+				opacity: 0.1;
+				position: absolute;
+				top: 59px;
+				left: 0;
+				border-radius: 50%;
+				animation: shadow .5s linear infinite;
+			}
+			.loader:after {
+				content: '';
+				width: 50px;
+				height: 50px;
+				background: #1a237e;
+				animation: animate .5s linear infinite;
+				position: absolute;
+				top: 0;
+				left: 0;
+				border-radius: 3px;
+			}
+			@keyframes animate {
+				17% {
+					border-bottom-right-radius: 3px;
+				}
+				25% {
+					transform: translateY(9px) rotate(22.5deg);
+				}
+				50% {
+					transform: translateY(18px) scale(1, 0.9) rotate(45deg);
+					border-bottom-right-radius: 40px;
+				}
+				75% {
+					transform: translateY(9px) rotate(67.5deg);
+				}
+				100% {
+					transform: translateY(0) rotate(90deg);
+				}
+			}
+			@keyframes shadow {
+				0%,
+				100% {
+					transform: scale(1, 1);
+				}
+				50% {
+					transform: scale(1.2, 1);
+				}
+			}
+			body,
+			html {
+				background: #ccc;
+
+				height: 100vh;
+			}
 		</style>
+
+		<app-root>
+			<div class="loader"></div>
+		</app-root>
+
+		<noscript>Please enable JavaScript to continue using this application.</noscript>
+
+		<script>
+			// This hides the address bar on mobile browsers
+			// https://developers.google.com/web/fundamentals/native-hardware/fullscreen/
+			window.addEventListener( 'load', function () { window.scrollTo( 0, 1 ); } );
+		</script>
 	</body>
 
 </html>

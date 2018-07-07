@@ -21,6 +21,17 @@
 					"/assets/**"
 				]
 			}
+		},
+		{
+			"name": "static-assets",
+			"installMode": "lazy",
+			"updateMode": "prefetch",
+			"resources": {
+				"urls": [
+					"https://fonts.googleapis.com/icon?family=Material+Icons",
+					"https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono"
+				]
+			}
 		}
 	]
 }

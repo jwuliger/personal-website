@@ -1,3 +1,25 @@
 {
-  "indexes": []
+	"indexes": [
+		{
+			"collectionId": "cities",
+			"fields": [
+				{
+					"fieldPath": "state",
+					"mode": "ASCENDING"
+				},
+				{
+					"fieldPath": "state",
+					"mode": "DESCENDING"
+				},
+				{
+					"fieldPath": "population",
+					"mode": "ASCENDING"
+				},
+				{
+					"fieldPath": "population",
+					"mode": "DESCENDING"
+				}
+			]
+		}
+	]
 }

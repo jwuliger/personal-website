@@ -1,31 +1,7 @@
-// // ----------------------------------------------------------------------- //
+@import './styles/app-theme';
 
-// html,
-// body {
-// 	height: 100%;
-// }
-// body {
-// 	font-family: 'Roboto', sans-serif;
-// }
+// Global Styles
 
-.view-wrapper {
+.content-wrapper {
 	margin: 1em 1em 1em 1em;
 }
-
-@import './styles/variables';
-@import './styles/reset';
-
-@import '~@angular/material/theming';
-
-@import './app-theme';
-
-// Include material core styles.
-@include mat-core();
-
-// Define the light theme.
-$primary: mat-palette($mat-indigo);
-$accent: mat-palette($mat-amber, A200, A100, A400);
-
-$theme: mat-light-theme($primary, $accent);
-@include angular-material-theme($theme);
-@include material-docs-app-theme($theme);

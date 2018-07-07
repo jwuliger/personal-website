@@ -1,21 +1,17 @@
-/**
- * Static Prerendering (Generative) Method
- */
-
 const path = require('path');
 const webpack = require('webpack');
 
 const APP_NAME = 'jmw-site';
 
 module.exports = {
-	entry     : { prerender: './prerender.ts' },
+	entry     : { server: './server.ts' },
 	resolve   : {
-		extensions : [
+		extensions: [
 			'.js',
 			'.ts'
 		]
 	},
-	mode      : 'none', // other options: development & production
+	mode      : 'none',
 	target    : 'node',
 	externals : [
 		/(node_modules|main\..*\.js)/
@@ -25,15 +21,9 @@ module.exports = {
 		filename : '[name].js'
 	},
 	module    : {
-		// rules: [
-		// 	{ test: /\.ts$/, loader: 'ts-loader' }
-		// ]
-
 		rules : [
 			{ test: /\.ts$/, loader: 'ts-loader' },
 			{
-				// Mark files inside `@angular/core` as using SystemJS style dynamic imports.
-				// Removing this will cause deprecation warnings to appear.
 				test   : /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
 				parser : { system: true }
 			}

@@ -1,1 +1,1 @@
-export const ROUTES = [ '/' ];
+export const ROUTES = [ '/', '/code-lab' ];

@@ -7,23 +7,16 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import * as fs from 'fs-extra';
 import { join, resolve } from 'path';
 
-// Load zone.js for the server.
+import { ROUTES } from './static.paths';
+
+// DOM libs required for Firebase
 (global as any).WebSocket = require('ws');
 (global as any).XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
-// Import module map for lazy loading
-// Add routes manually that you need rendered
-const ROUTES = [
-	'/'
-];
 
 const APP_NAME = 'jmw-site';
 
 // leave this as require(), imported via webpack
-const {
-	AppServerModuleNgFactory,
-	LAZY_MODULE_MAP
-} = require(`./dist/${APP_NAME}-server/main`);
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist/${APP_NAME}-server/main`);
 
 enableProdMode();
 
@@ -49,7 +42,7 @@ async function prerender() {
 		await fs.writeFile(join(pageDir, 'index.html'), html);
 	}
 
-	console.log('done rendering :)');
+	console.log('Prerender Completed.');
 	process.exit();
 }
 
