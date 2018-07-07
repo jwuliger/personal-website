@@ -1,7 +1,25 @@
 @import './styles/app-theme';
+@import './styles/general';
 
-// Global Styles
+// Global Styles //
 
 .content-wrapper {
 	margin: 1em 1em 1em 1em;
+}
+
+.primary-header {
+	background: mat-color($primary);
+
+	h1 {
+		color: mat-color($primary, default-contrast);
+	}
+}
+
+.page-header {
+	display: flex;
+	align-items: center;
+
+	@media (max-width: $small-breakpoint-width) {
+		padding-left: 0;
+	}
 }

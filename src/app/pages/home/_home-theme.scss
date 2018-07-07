@@ -1,0 +1,21 @@
+@mixin home-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
+	$background: map-get($theme, background);
+	$foreground: map-get($theme, foreground);
+
+	app-home {
+		.header-background {
+			background: mat-color($primary);
+		}
+
+		.header-headline {
+			color: mat-color($primary, default-contrast);
+		}
+
+		.header-start {
+			color: mat-color($primary);
+		}
+	}
+}

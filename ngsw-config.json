@@ -7,18 +7,22 @@
 			"resources": {
 				"files": [
 					"/favicon.ico",
-					"/manifest.json",
-					"/index.html"
+					"/index.html",
+					"/manifest.json"
+				],
+				"versionedFiles": [
+					"/*.bundle.css",
+					"/*.bundle.js",
+					"/*.chunk.js"
 				]
 			}
 		},
 		{
-			"name": "assets",
+			"name": "lazy-assets",
 			"installMode": "lazy",
-			"updateMode": "prefetch",
 			"resources": {
 				"files": [
-					"/assets/**"
+					"/assets/icons/**"
 				]
 			}
 		},
@@ -29,7 +33,7 @@
 			"resources": {
 				"urls": [
 					"https://fonts.googleapis.com/icon?family=Material+Icons",
-					"https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono"
+					"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Mono:300"
 				]
 			}
 		}

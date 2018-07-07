@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatCardModule, MatDividerModule, MatListModule, MatToolbarModule } from '@angular/material';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from 'angularfire2';
@@ -11,10 +11,12 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeModule } from './pages/home/home.module';
+import { FooterModule } from './shared/footer/footer.module';
+import { NavBarModule } from './shared/navbar/navbar.module';
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent],
+	declarations: [AppComponent],
 	imports: [
 		BrowserModule.withServerTransition({ appId: 'jmwServerApp' }),
 		BrowserTransferStateModule,
@@ -26,6 +28,11 @@ import { HomeComponent } from './pages/home/home.component';
 		AppRoutingModule,
 		BrowserAnimationsModule,
 
+		HomeModule,
+
+		NavBarModule,
+		FooterModule,
+
 		MatCardModule,
 		MatToolbarModule,
 		MatListModule,
@@ -34,6 +41,12 @@ import { HomeComponent } from './pages/home/home.component';
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production
 		})
+	],
+	exports: [
+		MatCardModule,
+		MatToolbarModule,
+		MatListModule,
+		MatDividerModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

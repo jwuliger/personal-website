@@ -3,10 +3,45 @@
 
 @import '~@angular/material/theming';
 
+@import './app/shared/navbar/navbar-theme';
+@import './app/shared/footer/footer-theme';
+@import './app/pages/home/home-theme';
+
 @include mat-core();
 
-$primary: mat-palette($mat-indigo);
-$accent: mat-palette($mat-amber, A200, A100, A400);
+$primary: mat-palette($mat-deep-purple, 800);
+$accent: mat-palette($mat-blue-grey, A200, A100, A400);
 
 $theme: mat-light-theme($primary, $accent);
+
+@mixin extended-app-theme($theme) {
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
+	$background: map-get($theme, background);
+	$foreground: map-get($theme, foreground);
+
+	.app-background {
+		background: mat-color($background, background);
+	}
+
+	.primary-header {
+		background: mat-color($primary);
+
+		h1 {
+			color: mat-color($primary, default-contrast);
+		}
+	}
+
+	.footer {
+		background: mat-color($primary);
+		color: mat-color($primary, default-contrast);
+	}
+
+	@include nav-bar-theme($theme);
+	@include footer-theme($theme);
+	@include home-theme($theme);
+}
+
 @include angular-material-theme($theme);
+@include extended-app-theme($theme);

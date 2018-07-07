@@ -1,25 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
-@Injectable( {
+@Injectable({
 	providedIn: 'root'
-} )
+})
 export class SeoService {
-	constructor( private meta: Meta, private titleService: Title ) {}
+	constructor(private meta: Meta, private titleService: Title) {}
 
-	generateTags( tags? ) {
+	public _title = '';
 
+	get title(): string {
+		return this._title;
+	}
+
+	set title(title: string) {
+		this._title = title;
+		if (title !== '') {
+			title = `${title} | `;
+		}
+		this.titleService.setTitle( `${ title}Jared Wuliger | Software Architect` );
+	}
+
+	generateTags(tags?) {
 		// defaults
 		tags = {
-			title: 'Jared Wuliger | Software Architect',
 			description: 'My description...',
 			image: 'https://angular.io/assets/images/logos/angular/angular.png',
 			slug: '',
 			...tags
 		};
-
-		// Set a title
-		this.titleService.setTitle(tags.title);
 
 		// Set meta tags
 		this.meta.updateTag({ name: 'twitter:card', content: 'summary' });

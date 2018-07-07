@@ -1,9 +1,82 @@
-:host {
-	h3.mat-line {
-		font-weight: 500;
+// The margin between two sections
+$margin-promotion-sections: 60px;
+$margin-promotion-sections-small: 15px;
+
+.header-background {
+	overflow: hidden;
+	padding: 5%;
+}
+
+.header-section {
+	text-align: center;
+	padding-top: $margin-promotion-sections;
+}
+
+.header-headline {
+	svg {
+		font-size: 56px;
+		font-weight: 300;
+		line-height: 56px;
 	}
 
-	.mat-card {
-		background: #fbfbfb;
+	h2 {
+		font-size: 26px;
+		font-weight: 300;
+		line-height: 28px;
+		margin: -45px 0 25px 0;
+	}
+}
+
+.header-start,
+.homepage-bottom-start {
+	text-align: center;
+	margin: $margin-promotion-sections 0;
+}
+
+/**
+  * Rules for when the device is detected to be a small screen.
+  */
+@media (max-width: 720px) {
+	.header-section {
+		padding-top: $margin-promotion-sections-small;
+	}
+
+	.header-start,
+	.homepage-bottom-start {
+		margin: $margin-promotion-sections-small 0;
+	}
+}
+
+
+/**
+  * SVG Animation Test
+  */
+
+svg text {
+	fill: rgb(255, 255, 255);
+	stroke: #90a4ae;
+	fill-opacity: 1;
+	stroke-width: 0;
+	stroke-dasharray: 100% 0;
+	animation: stroke-offset 3s ease-in-out;
+}
+
+@keyframes stroke-offset {
+	0% {
+		fill-opacity: 0;
+		stroke-width: 0;
+		stroke-dasharray: 0% 100%;
+	}
+	25% {
+		stroke-width: 1px;
+	}
+	50% {
+		fill-opacity: 0;
+	}
+	75% {
+		stroke-width: 1px;
+	}
+	100% {
+		stroke-width: 0;
 	}
 }
