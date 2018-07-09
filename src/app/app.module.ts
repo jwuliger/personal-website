@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatCardModule, MatDividerModule, MatListModule, MatToolbarModule } from '@angular/material';
-import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFireModule } from 'angularfire2';
@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavBarModule } from './shared/navbar/navbar.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
 	declarations: [AppComponent],
@@ -29,9 +30,9 @@ import { NavBarModule } from './shared/navbar/navbar.module';
 		BrowserAnimationsModule,
 
 		HomeModule,
+		SharedModule,
 
 		NavBarModule,
-		FooterModule,
 
 		MatCardModule,
 		MatToolbarModule,
@@ -42,12 +43,7 @@ import { NavBarModule } from './shared/navbar/navbar.module';
 			enabled: environment.production
 		})
 	],
-	exports: [
-		MatCardModule,
-		MatToolbarModule,
-		MatListModule,
-		MatDividerModule
-	],
+	exports: [MatCardModule, MatToolbarModule, MatListModule, MatDividerModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

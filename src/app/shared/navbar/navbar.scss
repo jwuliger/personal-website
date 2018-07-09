@@ -11,10 +11,6 @@
 	}
 }
 
-.flex-spacer {
-	flex-grow: 1;
-}
-
 .navbar-link {
 	text-decoration: inherit;
 	flex: 1;
@@ -25,9 +21,9 @@
 }
 
 .main-logo {
-  height: 15px;
-  margin: 0 4px 3px 0;
-  vertical-align: middle;
+	height: 15px;
+	margin: 0 4px 3px 0;
+	vertical-align: middle;
 }
 
 .navbar-show-small {

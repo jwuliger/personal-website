@@ -9,8 +9,6 @@
 					x="50%"
 					y="50%">Hi, I’m Jared. Nice to meet you.</text>
 			</svg>
-
-			<!-- <h1>Hi, I’m Jared. Nice to meet you.</h1> -->
 			<h2>I design and code beautiful things, and I love what I do.</h2>
 
 			<!-- <h1 appAutoSizeText
@@ -23,22 +21,12 @@
 </header>
 
 <div class="content-wrapper">
-
 	<mat-card>
 		<mat-card-header>
-			<h2 mat-subheading>Firebase Firestore Static Prerendering (Generative) Test</h2>
+			<h2 mat-subheading>Put things here like words and stuff</h2>
 		</mat-card-header>
 		<mat-card-content>
-			<mat-list>
-				<mat-list-item *ngFor="let contact of contacts">
-					<img mat-list-avatar
-						src="https://placeimg.com/640/480/any"
-						alt="Image of {{ contact.name }}">
-					<h3 mat-line>{{ contact.name }}</h3>
-					<p mat-line> {{ contact.status }} </p>
-					<mat-divider inset *ngIf="!last"></mat-divider>
-				</mat-list-item>
-			</mat-list>
 		</mat-card-content>
 	</mat-card>
 </div>
+<app-footer></app-footer>
