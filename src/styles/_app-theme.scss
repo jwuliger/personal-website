@@ -3,8 +3,8 @@
 
 @import '~@angular/material/theming';
 
-@import './app/shared/navbar/navbar-theme';
-@import './app/shared/footer/footer-theme';
+@import './app/shared/layout/navbar/navbar-theme';
+@import './app/shared/layout/footer/footer-theme';
 @import './app/pages/home/home-theme';
 
 @include mat-core();

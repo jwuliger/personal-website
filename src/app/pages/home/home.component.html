@@ -1,32 +1,30 @@
 <header class="header-background">
 	<div class="header-section">
-
 		<div class="header-headline">
-
-			<svg width="100%"
-				style="z-index: 99;">
-				<text text-anchor="middle"
-					x="50%"
-					y="50%">Hi, I’m Jared. Nice to meet you.</text>
-			</svg>
+			<h1 class="header-start">Hi, I’m Jared. Nice to meet you.</h1>
 			<h2>I design and code beautiful things, and I love what I do.</h2>
-
-			<!-- <h1 appAutoSizeText
-				[maxFontSize]="'48'">Hi, I’m Jared. Nice to meet you.</h1>
-			<h2 appAutoSizeText
-				[maxFontSize]="'22'">I design and code beautiful things, and I love what I do.</h2> -->
-
 		</div>
 	</div>
 </header>
 
 <div class="content-wrapper">
 	<mat-card>
-		<mat-card-header>
-			<h2 mat-subheading>Put things here like words and stuff</h2>
+		<mat-card-header *ngIf="this.stateService.isPlatformBrowser === true">
+			 <h2>Content Area - Running on the browser.</h2>
 		</mat-card-header>
+
+		<mat-card-header *ngIf="this.stateService.isPlatformBrowser === false">
+			<h2>Content Area - Running on the server.</h2>
+		</mat-card-header>
+
 		<mat-card-content>
 		</mat-card-content>
 	</mat-card>
 </div>
 <app-footer></app-footer>
+
+<!-- Testing latest FlexLayout version with SSR -->
+<div class="ngFlexTest" fxLayout="row" fxLayoutAlign="space-between center">
+	<div fxFlex>Left fxFlex Item</div>
+	<div fxFlex style="text-align: right;">Right fxFlex Item</div>
+</div>

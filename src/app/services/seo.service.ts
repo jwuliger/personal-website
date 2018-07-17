@@ -25,7 +25,7 @@ export class SeoService {
 		// defaults
 		tags = {
 			description: 'My description...',
-			image: 'https://angular.io/assets/images/logos/angular/angular.png',
+			image: 'assets/logo/jmw.svg',
 			slug: '',
 			...tags
 		};

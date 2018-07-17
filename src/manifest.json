@@ -1,7 +1,7 @@
 {
 	"name": "Jared Wuliger",
-	"short_name": "J.M.W",
-	"theme_color": "#1976d2",
+	"short_name": "JMW",
+	"theme_color": "#fdd835",
 	"background_color": "#fafafa",
 	"display": "standalone",
 	"scope": "/",

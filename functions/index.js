@@ -6,12 +6,12 @@ const path = require('path');
 const { enableProdMode } = require('@angular/core');
 const { renderModuleFactory } = require('@angular/platform-server');
 
-const { AppServerModuleNgFactory } = require('./dist/jmw-site-server/main');
+const { AppServerModuleNgFactory } = require('./dist/server/main');
 
 enableProdMode();
 
 const index = require('fs')
-	.readFileSync(path.resolve(__dirname, './dist/jmw-site/index.html'), 'utf8')
+	.readFileSync(path.resolve(__dirname, './dist/browser/index.html'), 'utf8')
 	.toString();
 
 let app = express();

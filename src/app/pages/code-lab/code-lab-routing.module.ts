@@ -6,8 +6,7 @@ import { CodeLabComponent } from './code-lab.component';
 const routes: Routes = [
 	{
 		path: '',
-		component: CodeLabComponent,
-		pathMatch: 'full'
+		component: CodeLabComponent
 	}
 ];
 

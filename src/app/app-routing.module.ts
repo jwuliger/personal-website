@@ -7,14 +7,12 @@ const routes: Routes = [
 	{
 		path: '',
 		component: HomeComponent,
-		pathMatch: 'full',
-		data: {}
+		pathMatch: 'full'
 	},
 	{
 		path: 'code-lab',
 		loadChildren: './pages/code-lab/code-lab.module#CodeLabModule',
-		pathMatch: 'full',
-		data: {}
+		pathMatch: 'full'
 	}
 ];
 

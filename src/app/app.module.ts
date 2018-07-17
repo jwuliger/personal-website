@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatDividerModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule, MatToolbarModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,8 +12,6 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavBarModule } from './shared/navbar/navbar.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -32,18 +30,14 @@ import { SharedModule } from './shared/shared.module';
 		HomeModule,
 		SharedModule,
 
-		NavBarModule,
-
 		MatCardModule,
 		MatToolbarModule,
-		MatListModule,
-		MatDividerModule,
 
 		ServiceWorkerModule.register('ngsw-worker.js', {
 			enabled: environment.production
 		})
 	],
-	exports: [MatCardModule, MatToolbarModule, MatListModule, MatDividerModule],
+	exports: [MatCardModule, MatToolbarModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

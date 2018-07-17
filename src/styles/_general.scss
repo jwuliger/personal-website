@@ -22,15 +22,11 @@ h2 {
 		font-size: 20px;
 		font-weight: 300;
 		margin: 0;
-		padding: 24px 8px;
+		padding: 24px 8px 22px;
 	}
 }
 
 // These styles are for controlling SVGs without using the /deep/ selector
-
-.docs-component-category-list-card-image svg {
-	width: 100%;
-}
 
 .main-footer-logo svg {
 	height: 50px;

@@ -15,7 +15,7 @@
 		}
 
 		.header-start {
-			color: mat-color($primary);
+			color: mat-color($accent, default-contrast);
 		}
 	}
 }

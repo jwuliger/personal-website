@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/internal/operators/filter';
+import { filter } from 'rxjs/operators';
 
 import { SeoService } from './services/seo.service';
 
@@ -13,29 +14,32 @@ import { SeoService } from './services/seo.service';
 	]
 })
 export class AppComponent implements OnInit {
-	constructor(private seo: SeoService, router: Router) {
-		// let previousRoute = router.routerState.snapshot.url;
 
-		// router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((data: NavigationEnd) => {
-		// 	this.resetScrollPosition();
-		// 	previousRoute = data.urlAfterRedirects;
-		// });
+	constructor(
+		@Inject(PLATFORM_ID) protected platformId: Object,
+		private seo: SeoService,
+		private router: Router
+	) {
+		// Only run this code on the client
+		if (isPlatformBrowser(this.platformId)) {
+			let previousRoute = this.router.routerState.snapshot.url;
+			this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe((data: NavigationEnd) => {
+				this.resetScrollPosition();
+				previousRoute = data.urlAfterRedirects;
+			});
+		}
+	}
 
-		this.resetScrollPosition();
+	ngOnInit() {
 	}
 
 	resetScrollPosition() {
-		if ( typeof document === 'object' && document ) {
-			const sidenavContent = document.querySelector( '.mat-drawer-content' );
-			if ( sidenavContent ) {
-				sidenavContent.scrollTop = 0;
-			}
+		if (typeof document === 'object' && document) {
+			(window as any).scroll(0, 0);
 		}
 	}
 
 	getTitle() {
 		return this.seo.title;
 	}
-
-	ngOnInit() {}
 }

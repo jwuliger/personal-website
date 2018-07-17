@@ -9,9 +9,6 @@
 					"/favicon.ico",
 					"/index.html",
 					"/manifest.json",
-					"/prerender.js"
-				],
-				"versionedFiles": [
 					"/*.bundle.css",
 					"/*.bundle.js",
 					"/*.chunk.js"
@@ -23,7 +20,7 @@
 			"installMode": "lazy",
 			"resources": {
 				"files": [
-					"/assets/icons/**"
+					"/assets/**"
 				]
 			}
 		},
