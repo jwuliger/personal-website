@@ -9,13 +9,12 @@
 
 <div class="content-wrapper">
 	<mat-card>
-		<mat-card-header *ngIf="this.stateService.isPlatformBrowser === true">
-			 <h2>Content Area - Running on the browser.</h2>
-		</mat-card-header>
 
-		<mat-card-header *ngIf="this.stateService.isPlatformBrowser === false">
+		<h2>Content Area.</h2>
+
+		<!-- <mat-card-header *ngIf="this.stateService.isPlatformServer === true">
 			<h2>Content Area - Running on the server.</h2>
-		</mat-card-header>
+		</mat-card-header> -->
 
 		<mat-card-content>
 		</mat-card-content>

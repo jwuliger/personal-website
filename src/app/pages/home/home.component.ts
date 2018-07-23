@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GlobalStateService } from '../../services/global-state.service';
+// import { GlobalStateService } from '../../services/global-state.service';
 
 @Component({
 	selector: 'app-home',
@@ -10,7 +10,9 @@ import { GlobalStateService } from '../../services/global-state.service';
 	]
 })
 export class HomeComponent implements OnInit {
-	constructor(public readonly stateService: GlobalStateService) {}
+	// constructor(public readonly stateService: GlobalStateService) {}
+
+	constructor() {}
 
 	ngOnInit() {}
 }

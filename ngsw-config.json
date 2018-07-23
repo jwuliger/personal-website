@@ -11,7 +11,10 @@
 					"/manifest.json",
 					"/*.bundle.css",
 					"/*.bundle.js",
-					"/*.chunk.js"
+					"/*.chunk.js",
+					"/*.css",
+					"/*.js",
+					"/*.js"
 				]
 			}
 		},
