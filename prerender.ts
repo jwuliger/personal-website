@@ -7,7 +7,7 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import * as fs from 'fs-extra';
 import { join, resolve } from 'path';
 
-import { ROUTES } from './static.paths';
+import { ROUTES } from 'static.paths';
 
 // DOM libs required for Firebase
 (global as any).WebSocket = require('ws');
