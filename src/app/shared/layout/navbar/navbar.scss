@@ -3,7 +3,7 @@
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 8px 16px;
-
+	// z-index: 9999;
 	> .mat-button {
 		&:last-child {
 			margin-left: auto;
@@ -24,26 +24,4 @@
 	height: 28px;
 	margin: 0 4px -1px 0;
 	vertical-align: middle;
-}
-
-.navbar-show-small {
-	display: none;
-}
-
-/**
-  * Rules for when the device is detected to be a small screen.
-  * Moves content two rows instead of one.
-  */
-@media (max-width: 720px) {
-	.navbar-hide-small {
-		display: none;
-	}
-
-	.navbar-show-small {
-		display: block;
-	}
-
-	.navbar {
-		display: flex;
-	}
 }
