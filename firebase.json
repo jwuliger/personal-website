@@ -10,6 +10,30 @@
 		]
 	},
 	"hosting": {
+		"headers": [
+			{
+				"source": "**/*.@(js|html|css)",
+				"headers": [{
+				  "key": "Cache-Control",
+				  "value": "max-age=604800"
+				}]
+			},
+			{
+			  "source": "/",
+			  "headers": [{
+				"key": "Link",
+				"value": "</main.1a454953436684deaac8.js>;rel=preload;as=script,</styles.cc4fecd0d471662022a2.css>;rel=preload;as=style"
+			  }]
+			},
+			{
+			  "source": "/code-lab/*",
+			  "headers": [{
+				"key": "Link",
+				"value": "</main.1a454953436684deaac8.js>;rel=preload;as=script,</styles.cc4fecd0d471662022a2.css>;rel=preload;as=style"
+			  }]
+			}
+		  ],
+
 		"ignore": [
 			"firebase.json",
 			"**/.*",

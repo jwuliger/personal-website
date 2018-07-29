@@ -25,10 +25,6 @@ module.exports = {
 		filename : '[name].js'
 	},
 	module    : {
-		// rules: [
-		// 	{ test: /\.ts$/, loader: 'ts-loader' }
-		// ]
-
 		rules : [
 			{ test: /\.ts$/, loader: 'ts-loader' },
 			{
