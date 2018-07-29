@@ -6,24 +6,15 @@
 		}
 	}
 
-@mixin nav-bar-theme($theme) {
+@mixin code-lab-theme($theme) {
 	$primary: map-get($theme, primary);
 	$accent: map-get($theme, accent);
 	$warn: map-get($theme, warn);
 	$background: map-get($theme, background);
 	$foreground: map-get($theme, foreground);
 
-	app-navbar {
-		color: mat-color($primary, default-contrast);
-
-		.navbar,
-		.navbar-header {
-			background: mat-color($primary);
-		}
-		button.mat-button {
-			color: set-dynamic-text-color(mat-color($primary));
-		}
-		.brand {
+	app-code-lab {
+		.primary-header {
 			color: set-dynamic-text-color(mat-color($primary));
 		}
 	}

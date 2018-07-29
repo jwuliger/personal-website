@@ -1,15 +1,13 @@
-@import 'variables';
-@import 'reset';
-
 @import '~@angular/material/theming';
 
 @import './app/shared/layout/navbar/navbar-theme';
 @import './app/shared/layout/footer/footer-theme';
 @import './app/pages/home/home-theme';
+@import './app/pages/code-lab/code-lab-theme';
 
 @include mat-core();
 
-$primary: mat-palette($mat-yellow, 600);
+$primary: mat-palette($mat-deep-orange, 800);
 $accent: mat-palette($mat-blue-grey, A200, A100, A400);
 
 $theme: mat-light-theme($primary, $accent);
@@ -21,18 +19,6 @@ $theme: mat-light-theme($primary, $accent);
 	$background: map-get($theme, background);
 	$foreground: map-get($theme, foreground);
 
-	.app-background {
-		background: mat-color($background, background);
-	}
-
-	.primary-header {
-		background: mat-color($primary);
-
-		h1 {
-			color: mat-color($primary, default-contrast);
-		}
-	}
-
 	.footer {
 		background: mat-color($primary);
 		color: mat-color($primary, default-contrast);
@@ -41,6 +27,7 @@ $theme: mat-light-theme($primary, $accent);
 	@include nav-bar-theme($theme);
 	@include footer-theme($theme);
 	@include home-theme($theme);
+	@include code-lab-theme($theme);
 }
 
 @include angular-material-theme($theme);

@@ -3,13 +3,14 @@
 	flex-wrap: wrap;
 	align-items: center;
 	padding: 8px 16px;
-	// z-index: 9999;
 	> .mat-button {
 		&:last-child {
 			margin-left: auto;
 		}
 	}
 }
+
+
 
 .navbar-link {
 	text-decoration: inherit;
@@ -18,10 +19,4 @@
 
 .navbar {
 	display: none;
-}
-
-.main-logo {
-	height: 28px;
-	margin: 0 4px -1px 0;
-	vertical-align: middle;
 }
