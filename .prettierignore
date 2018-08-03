@@ -3,3 +3,6 @@ dist/
 .cache
 build/
 lib/
+af_patch/
+scripts/
+prod_build/
