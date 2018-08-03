@@ -21,8 +21,12 @@
 		.header-headline {
 			color: set-dynamic-text-color(mat-color($primary));
 
-			height: auto;
-			margin: 0;
+			// height: auto;
+			margin-top: 5rem;
 		}
+
+		.header-start {
+			color: mat-color($primary);
+		  }
 	}
 }

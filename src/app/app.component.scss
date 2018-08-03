@@ -1,23 +1,20 @@
-app-root {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	top: 56px;
-	bottom: 0;
-	left: 0;
-	right: 0;
+app-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
-app-navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 2;
+app-root>app-home {
+    overflow-y: auto;
 }
 
 @media (max-width: 720px) {
-	app-root {
-		top: 92px;
-	}
+    app-root {
+        top: 92px;
+    }
+    app-root>app-home {
+        overflow-y: visible;
+    }
 }

@@ -1,21 +1,22 @@
 <header class="header-background">
 	<div class="header-section">
 		<div class="header-headline">
-			<h1>Hi, I’m Jared. Nice to meet you.</h1>
+			<h1 class="mat-h1">Hi, I’m Jared. Nice to meet you.</h1>
 			<h2>I design and code beautiful things, and I love what I do.</h2>
+		</div>
+		<div class="header-start">
+			<a mat-raised-button color="accent" class="app-button" routerLink="/">cta</a>
 		</div>
 	</div>
 </header>
 
 <div class="content-wrapper">
 	<mat-card>
-		<mat-card-header>- Content Area -</mat-card-header>
+		<h1>Card Header</h1>
+		<mat-card-content fxLayout="row" fxLayoutAlign="space-between center">
+			<div fxFlex>content block 1</div>
+			<div fxFlex style="text-align: right;">content block 2</div>
+		</mat-card-content>
 	</mat-card>
 </div>
 <app-footer></app-footer>
-
-<!-- Testing latest FlexLayout version with SSR -->
-<div class="ngFlexTest" fxLayout="row" fxLayoutAlign="space-between center">
-	<div fxFlex>Left fxFlex Item</div>
-	<div fxFlex style="text-align: right;">Right fxFlex Item</div>
-</div>

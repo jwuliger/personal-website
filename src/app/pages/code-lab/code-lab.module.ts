@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatDividerModule, MatListModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { SharedModule } from '../../shared/shared.module';
 import { CodeLabRoutingModule } from './code-lab-routing.module';
@@ -17,8 +20,6 @@ import { CodeLabComponent } from './code-lab.component';
 
 		CodeLabRoutingModule
 	],
-	declarations: [
-		CodeLabComponent
-	]
+	declarations: [CodeLabComponent]
 })
 export class CodeLabModule {}

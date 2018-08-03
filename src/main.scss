@@ -1,76 +1,69 @@
 @import './scss/app-theme';
-
 @function set-dynamic-text-color($color) {
-	@if (lightness($color) > 50) {
-			@return #000000; // Lighter backgorund, return dark color
-		} @else {
-			@return #ffffff; // Darker background, return light color
-		}
-	}
-
-
-// Global //
-
-$dynamic-text-color: mat-color($primary);
-$small-breakpoint-width: 720px;
-
-// .dynamic-hero {
-// 	background: $dynamic-text-color;
-// 	color: set-dynamic-text-color($dynamic-text-color);
-// }
-
-body {
-	font-family: "Roboto", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	margin: 0;
-	background-color: #eceff1;
+    @if (lightness($color) > 50) {
+        @return #000000; // Lighter backgorund, return dark color
+    }
+    @else {
+        @return #ffffff; // Darker background, return light color
+    }
 }
 
-.button[md-button],
-.button[md-raised-button] {
-	text-transform: uppercase;
+// Global //
+$dynamic-text-color: mat-color($primary);
+$small-breakpoint-width: 720px;
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin: 0;
+    background-color: #eceff1;
+}
+
+.app-button {
+    text-transform: uppercase;
 }
 
 h1,
 h2 {
-	font-weight: 400;
+    font-weight: 400;
 }
 
 .primary-header {
-	padding-left: 20px;
-
-	@media (max-width: $small-breakpoint-width) {
-		margin-top: 56px;
-	}
-
-	margin-top: 64px;
-	background: mat-color($primary);
-	h1 {
-		font-size: 20px;
-		font-weight: 300;
-		margin: 0;
-		padding: 24px 8px 22px;
-	}
+    padding-left: 20px;
+    @media (max-width: $small-breakpoint-width) {
+        margin-top: 56px;
+    }
+    margin-top: 64px;
+    background: mat-color($primary);
+    h1 {
+        font-size: 20px;
+        font-weight: 300;
+        margin: 0;
+        padding: 24px 8px 22px;
+    }
 }
 
 .flex-spacer {
-	flex-grow: 1;
+    flex-grow: 1;
 }
 
 .content-wrapper {
-	margin: 0.5em 0.5em 0.5em 0.5em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
 }
 
 .page-header {
-	display: flex;
-	align-items: center;
-
-	@media (max-width: $small-breakpoint-width) {
-		padding-left: 0;
-	}
+    display: flex;
+    align-items: center;
+    @media (max-width: $small-breakpoint-width) {
+        padding-left: 0;
+    }
 }
 
-router-outlet ~ * {
-	position: absolute;
-	height: 100%;
-	width: 100%;
+router-outlet~* {
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }

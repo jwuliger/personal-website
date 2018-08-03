@@ -16,6 +16,7 @@ let contacts$: Observable<any> = null;
 	styleUrls: ['./code-lab.component.scss']
 })
 export class CodeLabComponent implements OnInit, OnDestroy {
+	// https://randomuser.me
 
 	public contacts;
 
@@ -27,6 +28,7 @@ export class CodeLabComponent implements OnInit, OnDestroy {
 
 	ngOnInit() {
 		// set metatags
+		this.seo.title = 'Code Lab';
 		this.seo.generateTags();
 
 		// Get the contacts from the database

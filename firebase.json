@@ -1,53 +1,58 @@
 {
-	"firestore": {
-		"indexes": "firestore.indexes.json",
-		"rules": "firestore.rules"
-	},
-	"functions": {
-		"predeploy": [
-			"npm --prefix \"$RESOURCE_DIR\" run lint",
-			"npm --prefix \"$RESOURCE_DIR\" run build"
-		]
-	},
-	"hosting": {
-		"headers": [
-			{
-				"source": "**/*.@(js|html|css)",
-				"headers": [{
-				  "key": "Cache-Control",
-				  "value": "max-age=604800"
-				}]
-			},
-			{
-			  "source": "/",
-			  "headers": [{
-				"key": "Link",
-				"value": "</main.1a454953436684deaac8.js>;rel=preload;as=script,</styles.cc4fecd0d471662022a2.css>;rel=preload;as=style"
-			  }]
-			},
-			{
-			  "source": "/code-lab/*",
-			  "headers": [{
-				"key": "Link",
-				"value": "</main.1a454953436684deaac8.js>;rel=preload;as=script,</styles.cc4fecd0d471662022a2.css>;rel=preload;as=style"
-			  }]
-			}
-		  ],
-
-		"ignore": [
-			"firebase.json",
-			"**/.*",
-			"**/node_modules/**"
-		],
-		"public": "dist/jmw-site",
-		"rewrites": [
-			{
-				"destination": "/index.html",
-				"source": "**"
-			}
-		]
-	},
-	"storage": {
-		"rules": "storage.rules"
-	}
+    "firestore": {
+        "indexes": "firestore.indexes.json",
+        "rules": "firestore.rules"
+    },
+    "functions": {
+        "predeploy": [
+            "npm --prefix \"$RESOURCE_DIR\" run lint",
+            "npm --prefix \"$RESOURCE_DIR\" run build"
+        ]
+    },
+    "hosting": {
+        "headers": [
+            {
+                "source": "**/*.@(js|html|css)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=604800"
+                    }
+                ]
+            },
+            {
+                "source": "/",
+                "headers": [
+                    {
+                        "key": "Link",
+                        "value": "</styles.9ed84650d6d9c18ea5db.css>;rel=preload;as=style"
+                    }
+                ]
+            },
+            {
+                "source": "/code-lab/*",
+                "headers": [
+                    {
+                        "key": "Link",
+                        "value": "</styles.9ed84650d6d9c18ea5db.css>;rel=preload;as=style"
+                    }
+                ]
+            }
+        ],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "public": "dist/jmw-site",
+        "rewrites": [
+            {
+                "destination": "/index.html",
+                "source": "**"
+            }
+        ]
+    },
+    "storage": {
+        "rules": "storage.rules"
+    }
 }

@@ -1,4 +1,4 @@
 <app-navbar class="mat-elevation-z6"></app-navbar>
-<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''" class="mat-typography">
 	<router-outlet #o="outlet"></router-outlet>
 </main>

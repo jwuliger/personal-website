@@ -14,7 +14,7 @@
 	$foreground: map-get($theme, foreground);
 
 	app-footer {
-		.docs-footer-links a {
+		.footer-links a {
 			// color: mat-color($primary, default-contrast);
 			color: set-dynamic-text-color(mat-color($primary));
 		}

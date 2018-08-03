@@ -10,7 +10,8 @@
 	},
 	"exclude": [
 		"test.ts",
-		"**/*.spec.ts"
+		"**/*.spec.ts",
+		"../functions"
 	],
 	"angularCompilerOptions": {
 		"entryModule": "app/app.server.module#AppServerModule"

@@ -10,9 +10,7 @@
 			<mat-card-content>
 				<mat-list>
 					<mat-list-item *ngFor="let contact of contacts">
-						<img mat-list-avatar
-							src="assets/avatar.jpg"
-							alt="Image of {{ contact.name }}">
+						<img mat-list-avatar src="assets/avatar.jpg" alt="Image of {{ contact.name }}">
 						<h3 mat-line>{{ contact.name }}</h3>
 						<p mat-line> {{ contact.status }} </p>
 						<mat-divider inset *ngIf="!last"></mat-divider>
@@ -22,5 +20,4 @@
 		</mat-card>
 	</div>
 </section>
-
 <app-footer></app-footer>

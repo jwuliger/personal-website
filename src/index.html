@@ -1,42 +1,114 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-		<title>Jared Wuliger | Software Architect & Mentor</title>
-		<base href="/">
+<head>
+	<meta charset="utf-8">
+	<title>Jared Wuliger | Software Architect & Mentor</title>
+	<base href="/">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="mobile-web-app-capable" content="yes">
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="manifest" href="manifest.json">
-		<meta name="theme-color" content="#fdd835">
-	</head>
+	<meta name="description" content="JMW Description">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="manifest" href="manifest.json">
+	<meta name="theme-color" content="#fdd835">
+</head>
 
-	<body>
-		<style>
-			.loader:after,.loader:before{content:''}.loader,.loader:after,.loader:before{width:50px;position:absolute;left:0}.loader{height:50px;margin:auto;right:0;top:0;bottom:0}.loader:before{height:5px;background:#000;opacity:.1;top:59px;border-radius:50%;animation:shadow .5s linear infinite}.loader:after{height:50px;background:#ff9800;animation:animate .5s linear infinite;top:0;border-radius:3px}@keyframes animate{17%{border-bottom-right-radius:3px}25%{transform:translateY(9px) rotate(22.5deg)}50%{transform:translateY(18px) scale(1,.9) rotate(45deg);border-bottom-right-radius:40px}75%{transform:translateY(9px) rotate(67.5deg)}100%{transform:translateY(0) rotate(90deg)}}@keyframes shadow{0%,100%{transform:scale(1,1)}50%{transform:scale(1.2,1)}}body,html{height:100vh}
-		</style>
+<body>
+	<style>
+		.loader:after,
+		.loader:before {
+			content: ''
+		}
 
-		<app-root>
-			<span class="loader"></span>
-		</app-root>
+		.loader,
+		.loader:after,
+		.loader:before {
+			width: 50px;
+			position: absolute;
+			left: 0
+		}
 
-		<noscript>Please enable JavaScript to continue using this application.</noscript>
+		.loader {
+			height: 50px;
+			margin: auto;
+			right: 0;
+			top: 0;
+			bottom: 0
+		}
 
-		<script src="vendor/webfont.js"></script>
-		<script>
-			WebFont.load({
-				google: {
-					families: ['Material Icons', 'Roboto:300,400,500,700','Roboto+Mono:300' ]
-				}
-			});
+		.loader:before {
+			height: 5px;
+			background: #000;
+			opacity: .1;
+			top: 59px;
+			border-radius: 50%;
+			animation: shadow .5s linear infinite
+		}
 
-			// This hides the address bar on mobile browsers
-			// https://developers.google.com/web/fundamentals/native-hardware/fullscreen/
-			window.addEventListener( 'load', function () { window.scrollTo( 0, 1 ); } );
-		</script>
-	</body>
+		.loader:after {
+			height: 50px;
+			background: #1a237e;
+			animation: animate .5s linear infinite;
+			top: 0;
+			border-radius: 3px
+		}
+
+		@keyframes animate {
+			17% {
+				border-bottom-right-radius: 3px
+			}
+			25% {
+				transform: translateY(9px) rotate(22.5deg)
+			}
+			50% {
+				transform: translateY(18px) scale(1, .9) rotate(45deg);
+				border-bottom-right-radius: 40px
+			}
+			75% {
+				transform: translateY(9px) rotate(67.5deg)
+			}
+			100% {
+				transform: translateY(0) rotate(90deg)
+			}
+		}
+
+		@keyframes shadow {
+			0%,
+			100% {
+				transform: scale(1, 1)
+			}
+			50% {
+				transform: scale(1.2, 1)
+			}
+		}
+
+		body,
+		html {
+			height: 100vh
+		}
+	</style>
+
+	<app-root>
+		<span class="loader"></span>
+	</app-root>
+
+	<noscript>Please enable JavaScript to continue using this application.</noscript>
+
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: ['Roboto:300,400,500,700'] } // 'Material Icons',
+		};
+		(function () {
+			var wf = document.createElement('script');
+			wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})(); </script>
+
+</body>
 
 </html>

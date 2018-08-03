@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { MatCardModule, MatToolbarModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

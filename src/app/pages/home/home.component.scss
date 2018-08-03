@@ -1,40 +1,30 @@
+// The margin between two sections
+$margin-sections: 60px;
+$margin-sections-small: 15px;
 .header-background {
-	overflow: hidden;
-	padding: 5%;
+    overflow: hidden;
 }
 
 .header-section {
-	text-align: center;
-	padding-top: 4.5rem;
+    text-align: center;
+    padding-top: $margin-sections;
 }
 
 .header-headline {
-	svg {
-		font-size: 56px;
-		font-weight: 300;
-		line-height: 56px;
-	}
-
-	h1 {
-		margin: 0;
-	}
-
-	h2 {
-		font-size: 26px;
-		font-weight: 300;
-		line-height: 28px;
-		// margin: -45px 0 25px 0;
-	}
+    h1 {
+        font-size: 56px;
+        font-weight: 300;
+        line-height: 56px; // margin: 0 0 0 0;
+    }
+    h2 {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 28px;
+        margin: 15px 0 25px 0;
+    }
 }
 
-.header-start,
-.homepage-bottom-start {
-	text-align: center;
-	line-height: 1.20;
-	// margin: $margin-promotion-sections 0;
-}
-
-.ngFlexTest {
-	padding-top: 10px;
-	margin: 1em 1em 1em 1em;
+.header-start {
+    text-align: center;
+    margin: $margin-sections 0;
 }
